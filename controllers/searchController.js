@@ -4,7 +4,7 @@ import Review from '../models/reviewModel.js';
 // search by title / author
 // get/search
 
-const searchBooks = async(req, res, next)=>{
+export const searchBooks = async(req, res, next)=>{
     try {
         const {q: query}= req.query;
         const page = parseInt(req.query.page)||1;
@@ -66,8 +66,4 @@ const searchBooks = async(req, res, next)=>{
     } catch (error) {
         next(error);
     }
-};
-
-module.exports = {
-    searchBooks
 };

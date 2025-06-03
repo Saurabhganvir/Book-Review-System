@@ -34,4 +34,4 @@ const authenticationToken = async(req, res, next)=>{
     }
 };
 
-module.exports = authenticationToken;
+export default authenticationToken;

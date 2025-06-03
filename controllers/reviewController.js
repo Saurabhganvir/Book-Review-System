@@ -4,7 +4,7 @@ import Book from '../models/bookModel.js';
 //create a review for a book
 //post/books/:id/reviews
 
-const createReview = async (req, res, next)=>{
+export const createReview = async (req, res, next)=>{
     try {
         const bookId  = req.params.id;
 
@@ -52,7 +52,7 @@ const createReview = async (req, res, next)=>{
 //updating review
 //put/reviews/:id
 
-const updateReview = async(req, res, next)=>{
+export const updateReview = async(req, res, next)=>{
     try {
         const review = await Review.findOne({
             _id: req.params.id,
@@ -85,7 +85,7 @@ const updateReview = async(req, res, next)=>{
 // deleting a review
 //delete/reviews/:id
 
-const deleteReview = async(req, res, next)=>{
+export const deleteReview = async(req, res, next)=>{
     try {
         const review = await Review.findOne({
             _id:req.params.id,
@@ -110,7 +110,3 @@ const deleteReview = async(req, res, next)=>{
         next(error);
     }
 };
-
-module.exports= {
-    createReview, updateReview, deleteReview
-}

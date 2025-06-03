@@ -4,7 +4,7 @@ import Review from '../models/reviewModel.js';
 //creating newbok
 //post/book
 
-const createBook =async(req, res, next)=>{
+export const createBook =async(req, res, next)=>{
     try {
         const bookData = {
             ...req.body,
@@ -27,7 +27,7 @@ const createBook =async(req, res, next)=>{
 
 
 //get books with pagination and filters
-const getBooks = async (req, res, next) => {
+export const getBooks = async (req, res, next) => {
     try {
         const page = parseInt(req.query.page)||1;
         const limit = parseInt(req.query.limit)||10;
@@ -89,7 +89,7 @@ const getBooks = async (req, res, next) => {
 //get single book with review
 //get/books/:id
 
-const getBookById = async(req, res, next)=>{
+export const getBookById = async(req, res, next)=>{
     try {
         const book = await Book.findById(req.params.id).populate('createdBy', "username name");
 
@@ -142,5 +142,3 @@ const getBookById = async(req, res, next)=>{
         next(error);
     }
 }
-
-module.exports = {createBook, getBooks, getBookById}

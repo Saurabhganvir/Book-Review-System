@@ -48,4 +48,4 @@ bookSchema.index({title:'text', author:'text'});
 bookSchema.index({author: 1});
 bookSchema.index({genre: 1});
 
-module.exports = mongoose.model('Book', bookSchema);
+export default mongoose.model('Book', bookSchema);

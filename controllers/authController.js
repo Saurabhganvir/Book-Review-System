@@ -13,7 +13,7 @@ const generateToken = (userId)=>{
 // register new user
 // post/auth/signup
 
-const signup = async(req, res, next)=>{
+export const signup = async(req, res, next)=>{
     try {
         const {username , email, password, name} = req.body;
 
@@ -57,7 +57,7 @@ const signup = async(req, res, next)=>{
 //Login user
 //post/auth/login
 
-const login = async(req, res, next)=>{
+export const login = async(req, res, next)=>{
     try {
         const {username, password} = req.body;
 
@@ -103,5 +103,3 @@ const login = async(req, res, next)=>{
         next(error);
     }
 };
-
-module.exports= {signup, login};

@@ -34,4 +34,4 @@ const reviewSchema = new mongoose.Schema({
 //ensuring 1 review per user per book
 reviewSchema.index({book:1, user:1}, {unique:true});
 
-module.exports = mongoose.model('Review', reviewSchema);
+export default mongoose.model('Review', reviewSchema);

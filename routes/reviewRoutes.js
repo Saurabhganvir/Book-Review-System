@@ -10,4 +10,4 @@ router.route('/:id')
     .delete(authenticationToken, deleteReview);
 
 
-module.exports = router;
+export default router;

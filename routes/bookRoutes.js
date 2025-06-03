@@ -10,4 +10,4 @@ router.route('/').post(authenticationToken, createBook).get(getBooks);
 router.get('/:id',getBookById);
 router.post('/:id/reviews', authenticationToken, createReview);
 
-module.exports= router;
+export default router;
